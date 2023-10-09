@@ -2,7 +2,7 @@ import express from 'express';
 
 const urlRouter = express.Router();
 
-urlRouter.get('/', (req, res) => {
+urlRouter.get('/', (_req, res) => {
 	res.send('Hello World!');
 });
 

@@ -1,6 +1,6 @@
 import express from 'express';
 import * as middleware from './utils/middleware';
-import urlRouter from './router/urlRouter';
+import urlRouter from './controllers/urlRouter';
 
 const app = express();
 
