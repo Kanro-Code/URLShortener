@@ -10,7 +10,8 @@ app.use(cors());
 app.use(express.json());
 app.use(morgan('dev'));
 
-app.use('/api/url', urlRouter);
-app.use('/', redirectRouter);
+app.use('/', express.static('public'));
+// app.use('/api/url', urlRouter);
+// app.use('/redirect', redirectRouter);
 
 export default app;
