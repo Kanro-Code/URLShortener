@@ -1,3 +1,4 @@
+import fs from 'fs';
 import { isValidUrl } from '../src/utils/utils';
 
 describe('isValidUrl', () => {
@@ -77,5 +78,19 @@ describe('isValidUrl', () => {
 		const url = ' https://www.example.com';
 		const result = isValidUrl(url);
 		expect(result).toBe(false);
+	});
+
+	it('should return false if url is null', () => {
+		const url = null as string | null;
+		const result = isValidUrl(url as string);
+		expect(result).toBe(false);
+	});
+
+	it('should return true on a big collection of urls', () => {
+		const urls = JSON.parse(fs.readFileSync('./tests/urls.json', 'utf8'));
+		urls.forEach((url: string) => {
+			const result = isValidUrl(url);
+			expect(result).toBe(true);
+		});
 	});
 });
