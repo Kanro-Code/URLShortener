@@ -10,8 +10,11 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Url {
-	id Int @id @default(autoincrement())
-	nano String @unique
-	url String
+model UrlSlug {
+  id        String   @id @default(uuid())
+  url       String
+  slug      String   @unique
+  visited   Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }

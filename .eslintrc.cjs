@@ -19,6 +19,6 @@ module.exports = {
 		indent: ['error', 'tab'],
 		'@typescript-eslint/indent': ['error', 'tab'],
 		'@typescript-eslint/no-use-before-define': 'off',
-		'import/prefer-default-export': 'off',
+		'import/no-cycle': 'off',
 	},
 };

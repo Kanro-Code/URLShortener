@@ -1,12 +1,14 @@
 import express from 'express';
-import * as middleware from './utils/middleware';
-import urlRouter from './controllers/urlRouter';
-import redirectRouter from './controllers/redirect';
+import cors from 'cors';
+import morgan from 'morgan';
+import urlRouter from './routers/urlRouter';
+import redirectRouter from './routers/redirectRouter';
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
-app.use(middleware.requestLogger);
+app.use(morgan('dev'));
 
 app.use('/api/url', urlRouter);
 app.use('/', redirectRouter);
