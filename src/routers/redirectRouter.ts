@@ -3,6 +3,8 @@ import urlModel from '../controllers/urlController';
 
 const redirectRouter = express.Router();
 
+redirectRouter.use('/', express.static('public'));
+
 redirectRouter.get('/:slug', async (req, res) => {
 	const url = await urlModel.getBySlug(req.params.slug);
 	if (!url) return res.status(404).send('Not found');
