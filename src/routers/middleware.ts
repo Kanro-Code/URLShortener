@@ -6,10 +6,9 @@ const requestLogger = morgan('dev');
 const errorHandler = (
 	error: Error,
 	_request: Request,
-	res: Response,
+	_res: Response,
 	next: NextFunction
 ) => {
-	console.error(error.message);
 
 	// TODO: Actually handle errors
 
