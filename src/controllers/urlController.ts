@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client';
-import { getSlug, verifyUrl } from '../utils/utils';
+import { getSlug, verifyUrl } from '../utils/utils.js';
 
 const prisma = new PrismaClient();
 

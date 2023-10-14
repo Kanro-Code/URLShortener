@@ -1,5 +1,5 @@
 import { customAlphabet } from 'nanoid';
-import Url from '../controllers/urlController';
+import Url from '../controllers/urlController.js';
 
 const nanoid = customAlphabet('0123456789abcdefghijklmnopqrstuvwxyz', 6);
 

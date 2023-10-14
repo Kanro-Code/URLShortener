@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { isValidUrl } from '../src/utils/utils';
+import { isValidUrl } from '../src/utils/utils.js';
 
 describe('isValidUrl', () => {
 	it('should return true for a valid URL', () => {

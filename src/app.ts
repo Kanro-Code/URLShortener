@@ -1,8 +1,8 @@
 import express from 'express';
 import cors from 'cors';
-import urlRouter from './routers/urlRouter';
-import redirectRouter from './routers/redirectRouter';
-import middleware from './routers/middleware';
+import urlRouter from './routers/urlRouter.js';
+import redirectRouter from './routers/redirectRouter.js';
+import middleware from './routers/middleware.js';
 
 const app = express();
 

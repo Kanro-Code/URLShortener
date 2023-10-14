@@ -1,6 +1,6 @@
-import { createRoot } from 'react-dom/client';
+// import { createRoot } from 'react-dom/client';
 
-document.body.innerHTML = '<div id="app"></div>';
+// document.body.innerHTML = '<div id="app"></div>';
 
-const root =  createRoot(document.getElementById('app'));
-root.render(<h1>Hello World</h1>);
+// const root =  createRoot(document.getElementById('app'));
+// root.render(<h1>Hello World</h1>);
