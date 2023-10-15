@@ -4,15 +4,16 @@ import { NextFunction, Request, Response } from 'express';
 const requestLogger = morgan('dev');
 
 const errorHandler = (
-	error: Error,
-	_request: Request,
-	_res: Response,
+	error: unknown,
+	_req: Request,
+	res: Response,
 	next: NextFunction
 ) => {
+	if (error instanceof Error && 'error' in error) {
+		return res.status(400).json({ error: error.error });
+	}
 
-	// TODO: Actually handle errors
-
-	return next(error);
+	next(error);
 };
 
 const unknownEndpoint = (_request: Request, res: Response) => {
