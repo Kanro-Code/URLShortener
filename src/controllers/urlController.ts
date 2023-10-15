@@ -45,9 +45,11 @@ const create = async (url: string, slug?: string) => {
 		throw new Error('Invalid URL');
 	}
 
+	console.log(slug);
+
 	if (slug) {
-		const existing = prisma.urlSlug.findUnique({ where: { slug } });
-		if (!existing) throw new Error('Slug already exists');
+		const existing = await prisma.urlSlug.findUnique({ where: { slug } });
+		if (existing) throw new Error('Slug already exists');
 	} else {
 		slug = await getSlug();
 	}

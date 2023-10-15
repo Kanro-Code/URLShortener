@@ -15,13 +15,12 @@ function App() {
 		}
 	};
 
-	const addUrl = (e: React.SyntheticEvent) => {
+	const addUrl = async (e: React.SyntheticEvent) => {
 		e.preventDefault();
 		try {
-			urlService.create({ url: newUrl, slug: newSlug });
+			await urlService.create({ url: newUrl, slug: newSlug });
 		} catch (err: unknown) {
 			errorHandler(err);
-
 		}
 	};
 
@@ -29,6 +28,7 @@ function App() {
 		return (
 			<div className="error">
 				<p>{err}</p>
+				<button onClick={() => setNewError('')}>close</button>
 			</div>
 		);
 	};

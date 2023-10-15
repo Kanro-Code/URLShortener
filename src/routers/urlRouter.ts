@@ -10,9 +10,13 @@ urlRouter.get('/:slug', async (req, res) => {
 	return res.redirect(url.url);
 });
 
-urlRouter.post('/', async (req, res) => {
-	const url = await urlModel.create(req.body.url, req.body.slug);
-	return res.json(url);
+urlRouter.put('/', async (req, res, next) => {
+	try {
+		const url = await urlModel.create(req.body.url, req.body.slug);
+		return res.json(url);
+	} catch (err) {
+		return next(err);
+	}
 });
 
 export default urlRouter;

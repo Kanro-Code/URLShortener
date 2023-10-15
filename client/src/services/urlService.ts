@@ -1,11 +1,11 @@
-import axios from 'axios'
-import { NewUrl } from '../types'
+import axios from 'axios';
+import { NewUrl } from '../types';
 
-const baseUrl = 'api/url'
+const baseUrl = 'api/url';
 
-const create = (newUrl: NewUrl) => {
-	const req = axios.post(baseUrl, newUrl)
-	return req.then(res => res.data)
-}
+const create = async (newUrl: NewUrl) => {
+	const res = await axios.put(baseUrl, newUrl);
+	return res.data
+};
 
-export default { create }
+export default { create };

@@ -9,11 +9,11 @@ const errorHandler = (
 	res: Response,
 	next: NextFunction
 ) => {
-	if (error instanceof Error && 'error' in error) {
-		return res.status(400).json({ error: error.error });
+	if (error instanceof Error) {
+		return res.status(400).json({ error: error.message });
 	}
 
-	next(error);
+	return next(error);
 };
 
 const unknownEndpoint = (_request: Request, res: Response) => {
