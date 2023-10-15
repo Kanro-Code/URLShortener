@@ -16,10 +16,10 @@ redirectRouter.use('/', express.static('src/dist'));
  * @returns {Promise<void>} - A Promise that resolves to void.
  */
 redirectRouter.get('/:slug', async (req, res) => {
-	const url = await urlModel.getBySlug(req.params.slug);
-	if (!url) return res.status(404).send('Not found');
+	const redirect = await urlModel.getBySlug(req.params.slug);
+	if (!redirect) return res.status(404).send('Not found');
 
-	return res.redirect(url.url);
+	return res.redirect(308, redirect.url);
 });
 
 export default redirectRouter;
