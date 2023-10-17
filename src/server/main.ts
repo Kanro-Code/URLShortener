@@ -1,21 +1,6 @@
-import express from 'express';
 import ViteExpress from 'vite-express';
-import { customAlphabet } from 'nanoid';
 import logger from './logger';
-
-/**
- * Express app instance
- */
-const app = express();
-
-/**
- * Route handler for /hello endpoint
- * @param _ - Express request object
- * @param res - Express response object
- */
-app.get('/hello', (_, res) => {
-	res.send('Hello Vite + React + TypeSacript!');
-});
+import app from './app';
 
 /**
  * Start the server and listen on port 3000
