@@ -2,6 +2,8 @@ import ViteExpress from 'vite-express';
 import logger from './logger';
 import app from './app';
 
+ViteExpress.config({ mode: 'development' });
+
 /**
  * Start the server and listen on port 3000
  */

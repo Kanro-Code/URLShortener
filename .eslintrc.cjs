@@ -20,5 +20,6 @@ module.exports = {
 		'@typescript-eslint/indent': ['error', 'tab'],
 		'@typescript-eslint/no-use-before-define': 'off',
 		'import/no-cycle': 'off',
+		'import/extensions': 'off',
 	},
 };
