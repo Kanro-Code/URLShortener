@@ -8,17 +8,10 @@ const get = () => {
 	return axios.get(baseUrl);
 };
 
-const create = async ({
-	newUrl,
-	newSlug,
-}: {
-	newUrl: string;
-	newSlug: string;
-}): Promise<NewUrl> => {
-	console.log(`'create' ${newUrl}`);
+const create = async ({ original, slug }: NewUrl): Promise<NewUrl> => {
 	const newObject = {
-		original: newUrl,
-		slug: newSlug,
+		original,
+		slug,
 	};
 	const res = await axios.post(baseUrl, newObject);
 	return res.data;

@@ -8,8 +8,12 @@ const Form = (): JSX.Element => {
 	const handleSubmit = async (event: React.SyntheticEvent) => {
 		event.preventDefault();
 		console.log('Form submitted');
-		const url = await urlService.create({ newUrl, newSlug });
-		console.log(url);
+		try {
+			const url = await urlService.create({ original: newUrl, slug: newSlug });
+			console.log(url);
+		} catch (err) {
+			console.error(err);
+		}
 	};
 
 	return (
